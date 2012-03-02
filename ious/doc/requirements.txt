@@ -1,0 +1,19 @@
+- A transaction could be of the type
+  * Personal
+    * Expense
+    * Income
+    * Refund
+    * Transfer
+  * Shared
+    * I loaned
+    * I paid
+    * Shared Transaction
+    * Settlement
+
+- Interface:
+  - Get inspired by Buxfer's interface
+  - Clean way of knowing / seeing where my money is going (on optional tags)
+  - Clean way of seeing income with configurable graphs (on optional tags)
+
+- Buxfer Limitations
+  - Cannot merge two accounts (in the friend's list)

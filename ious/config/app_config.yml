@@ -1,0 +1,59 @@
+default: &default
+  session_secret: '3935f6422e9c980caf9a6d495ba15fea1aa1b051c56e8747943e72564c5a9d1672f9ecee6ce59d271aaf97b9de80ae8a21b9395574f28f033d9e106c027e9dd5'
+  session_store_id:  '_ious_session'
+
+  cookie_store: :cookie_store
+
+  devise_email:   'notify@ious.in'
+  devise_pepper:  ''
+
+  newrelic_key: 'f6c5ec94f2e4e0a4fa43f40289cce0cd9ade74f4'
+  domain_name: 'ious.in'
+
+development:
+  <<: *default
+  # hostname
+  hostname: 'localhost:4444'
+
+  # the domain name
+  devise_email:   'notify@ious.in'
+
+  # oauth keys
+  # github
+  github_client: 'xx'
+  github_secret: 'xx'
+  # fb
+  facebook_key:  'xx'
+  facebook_secret: 'xx'
+
+production:
+  <<: *default
+
+  session_store_id:  '_ious_in_session'
+
+  #hostname
+  hostname: 'ious.in'
+
+  # the domain name
+  devise_email:   'notify@ious.in'
+  devise_pepper:  'xx'
+
+  # fog crendentials
+  fog_provider: 'AWS'
+  fog_directory: 'xx'
+  aws_access_key: 'xx'
+  aws_secret_key: 'xx'
+
+  # cloudfront in front of s3
+  cloudfront_host: 'xx.cloudfront.net'
+
+  # oauth keys
+  # github
+  github_client: 'xx'
+  github_secret: 'xx'
+  # fb
+  facebook_key:  'xx'
+  facebook_secret: 'xx'
+
+  google_analytics: 'UA-28436145-1'
+  quantcast_analytics: 'p-42lxzE4xvHoGI'

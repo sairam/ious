@@ -1,0 +1,107 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.2'
+
+gem 'sqlite3'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>=1.0.3'
+  gem 'yui-compressor'
+  gem 'execjs'
+  gem 'therubyracer'
+end
+# UI
+
+## jquery rails library
+gem 'jquery-rails'
+
+## Twitter Bootstrap for Sass
+gem 'bootstrap-sass', '~> 2.0.1'
+
+## HTML format
+gem 'slim'
+
+# Pagination
+gem 'kaminari'
+
+# Views - https://github.com/jcasimir/draper
+gem 'draper'
+
+# time stamps
+gem 'stamp' # https://github.com/jeremyw/stamp
+
+# money
+gem 'money'
+
+# Add tags
+gem "acts-as-taggable-on", "~> 2.1.0"
+
+# Backend
+## Authentication: Added devise authentication to integrate users
+#gem 'devise'
+#gem 'omniauth-facebook'
+#gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+#gem 'omniauth-google'
+
+# Metrics
+## Logging useful metrics in production
+gem 'newrelic_rpm'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+group :production do
+  gem 'mysql'
+  gem 'asset_sync'
+  gem 'hoptoad_notifier'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'awesome_print'
+  gem 'database_cleaner'
+  gem 'launchy'
+  if ENV['AUTOTEST_MAC_DEPS']
+    gem 'autotest-growl'
+    gem 'autotest-fsevent'
+  end
+
+  gem 'faker'
+
+end
+
+group :development do
+
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+
+  # manage vendor assets
+  gem 'vendorer' # https://github.com/grosser/vendorer
+
+  gem 'mailcatcher'
+  gem 'sqlite3'
+  gem 'pry-rails'
+  gem 'awesome_print'
+
+  gem 'rails_best_practices'
+end
+group :test do
+  # To use debugger
+  # gem 'ruby-debug19', :require => 'ruby-debug'
+
+  # Pretty printed test output
+  gem 'turn', :require => false
+  gem "turn", :require => false
+  gem "simplecov", :require => false
+  gem "shoulda", "3.0.1"
+end

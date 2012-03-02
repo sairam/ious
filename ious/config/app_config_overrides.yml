@@ -1,0 +1,3 @@
+# This file should be empty. This should be overriden at deploy levels
+# Can override default_url , errbit_host and errbit_apikey
+dummy: true

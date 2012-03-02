@@ -1,0 +1,26 @@
+Basic:
+  - Setup Gems and add basic README for development
+    - annotate
+    - devise
+    - kaminari
+    - draper
+    - money
+    - vendorer
+    - newrelic
+    - bootstrap-sass
+    - formtastic ? (might not be compatible with bootstrap - avoid if possible)
+  - Setup basic layout using twitter bootstrap
+Tasks:
+  Database:
+    - Prepare Schema (use float precision of 2 )
+    - User table setup with Devise and add timezone
+    - Add indexes to tables
+  Schema:
+    - An account has many transactions ( Each account has a currency field as well)
+    - A user can have a transaction with other users
+    - A user has many accounts
+    - A user has a default account
+    - A transaction can have tags ( see acts_as_taggable_on gem )
+  UI:
+    - Flash notification area (fixed size or should we let it overflow ?)
+    - Removing the flash notification area causes change of data position

@@ -1,0 +1,11 @@
+body {
+  min-height: 400px;
+}
+
+footer {
+  text-align: center;
+}
+
+div.clear {
+  clear:both;
+}
