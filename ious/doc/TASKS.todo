@@ -16,6 +16,7 @@ Tasks:
     - User table setup with Devise and add timezone
     - Add indexes to tables
   Schema:
+    ✓ [done] Create transactions table
     - An account has many transactions ( Each account has a currency field as well)
     - A user can have a transaction with other users
     - A user has many accounts

@@ -63,3 +63,8 @@ Ious::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+#== Route Map
+# Generated on 03 Mar 2012 12:37
+#
+#      home GET /home(.:format)      home#show
+#      root     /                    home#show
