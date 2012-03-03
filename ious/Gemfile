@@ -25,22 +25,23 @@ gem 'bootstrap-sass', '~> 2.0.1'
 ## HTML format
 gem 'slim'
 
-# Pagination
+## Pagination
 gem 'kaminari'
 
-# Views - https://github.com/jcasimir/draper
+## Views - https://github.com/jcasimir/draper
 gem 'draper'
 
-# time stamps
+# Backend
+
+## time stamps
 gem 'stamp' # https://github.com/jeremyw/stamp
 
-# money
+## money / currency conversions
 gem 'money'
 
-# Add tags
+## Add tags
 gem "acts-as-taggable-on", "~> 2.1.0"
 
-# Backend
 ## Authentication: Added devise authentication to integrate users
 #gem 'devise'
 #gem 'omniauth-facebook'
@@ -57,26 +58,43 @@ gem 'newrelic_rpm'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-group :production do
-  gem 'mysql'
-  gem 'asset_sync'
-  gem 'hoptoad_notifier'
-end
-
 group :development, :test do
+
+  # test models and controllers
   gem 'rspec-rails'
+
+  # integration tests
   gem 'cucumber-rails'
+
+  # for javascript annotations
   gem 'capybara'
-  gem 'autotest'
-  gem 'autotest-rails'
-  gem 'awesome_print'
-  gem 'database_cleaner'
+
+  # to use save_and_open_page
   gem 'launchy'
-  if ENV['AUTOTEST_MAC_DEPS']
+
+  # automagically run tests
+  gem 'autotest-rails'
+
+  # clean database quickly
+  gem 'database_cleaner'
+
+  # Keep a rails test environment in memory allow rspec to fork
+  gem 'spork'
+
+  # colors for the terminal
+  gem 'term-ansicolor'
+
+  # Pretty printed test output
+  gem 'turn', :require => false
+
+  # gem 'redgreen', :require => false
+
+  if RUBY_PLATFORM =~ /darwin/i
     gem 'autotest-growl'
     gem 'autotest-fsevent'
   end
 
+  # Data faker
   gem 'faker'
 
 end
@@ -88,20 +106,45 @@ group :development do
   # manage vendor assets
   gem 'vendorer' # https://github.com/grosser/vendorer
 
+  # Simple SMTP server and mail viewer
   gem 'mailcatcher'
+
+  # Development database
   gem 'sqlite3'
+
+  # For Debugging
   gem 'pry-rails'
+
+  # Hirb - Better viewing of structured data
+  gem 'hirb'
+
+  # Pretty Printing
   gem 'awesome_print'
 
+  # Analysis and best practices
   gem 'rails_best_practices'
 end
+
 group :test do
   # To use debugger
   # gem 'ruby-debug19', :require => 'ruby-debug'
 
-  # Pretty printed test output
-  gem 'turn', :require => false
-  gem "turn", :require => false
+  # Test coverage
   gem "simplecov", :require => false
+
+  # shoulda
   gem "shoulda", "3.0.1"
+end
+
+
+group :production do
+
+  # production database
+  gem 'mysql'
+
+  # syncing assets to s3 / rackspace
+  gem 'asset_sync'
+
+  # notification of errors
+  gem 'hoptoad_notifier'
 end
