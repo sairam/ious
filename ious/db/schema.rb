@@ -11,21 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303065011) do
+ActiveRecord::Schema.define(:version => 20120303100924) do
 
   create_table "transactions", :force => true do |t|
-    t.integer  "account_id", :null => false
-    t.string   "title",      :null => false
-    t.float    "amount",     :null => false
-    t.boolean  "net_effect", :null => false
-    t.datetime "date",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "account_id",                         :null => false
+    t.string   "title",                              :null => false
+    t.float    "amount",                             :null => false
+    t.datetime "date",                               :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.integer  "transaction_type_id", :default => 0, :null => false
+    t.integer  "status",              :default => 0, :null => false
   end
 
   add_index "transactions", ["account_id"], :name => "index_transactions_on_account_id"
   add_index "transactions", ["amount"], :name => "index_transactions_on_amount"
   add_index "transactions", ["date"], :name => "index_transactions_on_date"
+  add_index "transactions", ["status"], :name => "index_transactions_on_status"
   add_index "transactions", ["title"], :name => "index_transactions_on_title"
+  add_index "transactions", ["transaction_type_id"], :name => "index_transactions_on_transaction_type_id"
 
 end
