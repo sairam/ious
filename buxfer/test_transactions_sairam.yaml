@@ -1,0 +1,44 @@
+--- 
+:author: sairam
+:owe: 
+  Naveen: 
+  - Pramod
+  - 120
+  Sairam: 
+  - Harith
+  - 23
+  Manohar: 
+  - Harith
+  - 9
+  - Pramod
+  - 3
+:inactive: false
+:moneylenders: 
+  Pramod: 123
+  Sairam: 100
+  Harith: 32
+:desc: Movie DVD
+:participants: 
+  Naveen: 120
+  Sairam: 123
+  Manohar: 12
+:get: 
+  Pramod: 
+  - Naveen
+  - 120
+  - Manohar
+  - 3
+  Harith: 
+  - Sairam
+  - 23
+  - Manohar
+  - 9
+:rev: 1
+:tags: 
+- movie
+- entertainment
+:account: Wallet
+:cost: 
+:id: 1
+:date: "2011-01-27"
+:timestamp: 20110213174935
